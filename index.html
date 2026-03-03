@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>G R Muthamilharasi | Data Portfolio</title>
+<title>G R Muthamilharasi | AI & Data Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -17,8 +17,57 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#0f0f14;
+background: linear-gradient(-45deg, #0f0f14, #161622, #0d1a26, #111827);
+background-size: 400% 400%;
+animation: gradientBG 10s ease infinite;
 color:#f5f5f5;
+overflow-x:hidden;
+}
+
+/* Animated Background */
+@keyframes gradientBG {
+0% {background-position:0% 50%;}
+50% {background-position:100% 50%;}
+100% {background-position:0% 50%;}
+}
+
+/* INTRO */
+#intro{
+position:fixed;
+width:100%;
+height:100vh;
+background:#0f0f14;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:introFade 3s forwards;
+}
+
+.intro-text{
+text-align:center;
+animation:zoomText 2s ease;
+}
+
+#intro h1{
+font-size:60px;
+color:#00c6ff;
+}
+
+#intro p{
+margin-top:10px;
+font-size:20px;
+}
+
+@keyframes zoomText{
+from{transform:scale(0.5);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
+
+@keyframes introFade{
+0%{opacity:1;}
+85%{opacity:1;}
+100%{opacity:0;visibility:hidden;}
 }
 
 /* NAV */
@@ -29,14 +78,12 @@ align-items:center;
 padding:20px 10%;
 position:fixed;
 width:100%;
-background:rgba(15,15,20,0.9);
+background:rgba(15,15,20,0.8);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
 
-nav h2{
-color:#00c6ff;
-}
+nav h2{color:#00c6ff;}
 
 nav ul{
 display:flex;
@@ -47,7 +94,6 @@ gap:30px;
 nav ul li a{
 color:white;
 text-decoration:none;
-font-weight:400;
 transition:0.3s;
 }
 
@@ -59,9 +105,9 @@ color:#00c6ff;
 .hero{
 height:100vh;
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
-flex-direction:column;
 text-align:center;
 }
 
@@ -71,8 +117,9 @@ font-size:48px;
 
 .typing{
 color:#00c6ff;
+margin-top:15px;
 font-size:22px;
-margin-top:10px;
+height:30px;
 }
 
 .btn{
@@ -81,9 +128,9 @@ padding:10px 25px;
 border:none;
 background:#00c6ff;
 color:black;
+border-radius:25px;
 font-weight:600;
 cursor:pointer;
-border-radius:30px;
 transition:0.3s;
 }
 
@@ -91,12 +138,20 @@ transition:0.3s;
 background:white;
 }
 
-/* SECTION */
+/* SECTIONS */
 section{
 padding:100px 10%;
+opacity:0;
+transform:rotateX(20deg) scale(0.95);
+transition:all 1s ease;
 }
 
-h2.section-title{
+section.show{
+opacity:1;
+transform:rotateX(0deg) scale(1);
+}
+
+.section-title{
 text-align:center;
 margin-bottom:50px;
 color:#00c6ff;
@@ -106,67 +161,60 @@ color:#00c6ff;
 .skills{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+gap:25px;
 }
 
 .skill-box{
 background:#1a1a24;
 padding:20px;
-border-radius:10px;
+border-radius:12px;
 transition:0.4s;
 }
 
 .skill-box:hover{
 transform:translateY(-10px);
-box-shadow:0 0 20px rgba(0,198,255,0.3);
+box-shadow:0 10px 30px rgba(0,198,255,0.3);
 }
 
 /* PROJECTS */
 .projects{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
+gap:30px;
 }
 
 .project-card{
 background:#1a1a24;
-padding:20px;
-border-radius:10px;
-transition:0.4s;
+padding:25px;
+border-radius:12px;
+transition:0.5s;
 cursor:pointer;
+transform-style:preserve-3d;
 }
 
 .project-card:hover{
-transform:scale(1.05);
-box-shadow:0 0 25px rgba(0,198,255,0.3);
+transform:rotateY(8deg) rotateX(8deg) scale(1.05);
+box-shadow:0 20px 40px rgba(0,198,255,0.3);
 }
 
 /* CONTACT */
-.contact{
-text-align:center;
-}
+.contact{text-align:center;}
 
 .footer{
 text-align:center;
 padding:20px;
 background:#1a1a24;
 }
-
-/* Scroll animation */
-.fade-in{
-opacity:0;
-transform:translateY(40px);
-transition:all 1s ease;
-}
-
-.fade-in.active{
-opacity:1;
-transform:translateY(0);
-}
-
 </style>
 </head>
 <body>
+
+<div id="intro">
+<div class="intro-text">
+<h1>Welcome</h1>
+<p>Intelligence Through Data</p>
+</div>
+</div>
 
 <nav>
 <h2>GRM</h2>
@@ -180,83 +228,110 @@ transform:translateY(0);
 
 <div class="hero">
 <h1>G R Muthamilharasi</h1>
-<div class="typing">Data Analyst | AI & Machine Learning Enthusiast</div>
-<a href="#projects"><button class="btn">View Projects</button></a>
+<div class="typing"><span id="typed-text"></span></div>
+<a href="#projects"><button class="btn">Explore My Work</button></a>
 </div>
 
-<section id="about" class="fade-in">
+<section id="about">
 <h2 class="section-title">About Me</h2>
 <p>
-Analytical and detail-oriented AI & Data Science graduate passionate about solving real-world business problems using SQL, Python, Machine Learning and Data Visualization.
+AI & Data Science graduate passionate about transforming raw data into actionable intelligence using SQL, Python, Machine Learning and Data Visualization.
 </p>
 </section>
 
-<section id="skills" class="fade-in">
+<section id="skills">
 <h2 class="section-title">Technical Skills</h2>
 <div class="skills">
-<div class="skill-box">SQL (Joins, Aggregation, Window Functions)</div>
-<div class="skill-box">Python (Pandas, NumPy, ML)</div>
-<div class="skill-box">Power BI & Dashboarding</div>
-<div class="skill-box">Data Cleaning & EDA</div>
-<div class="skill-box">Machine Learning Models</div>
-<div class="skill-box">Advanced Excel</div>
+<div class="skill-box">SQL – Advanced Joins, Aggregations, Query Optimization</div>
+<div class="skill-box">Python – Pandas, NumPy, Scikit-learn</div>
+<div class="skill-box">Machine Learning – Classification & Anomaly Detection</div>
+<div class="skill-box">Power BI – Interactive Dashboard Design</div>
+<div class="skill-box">Advanced Excel & Data Validation</div>
+<div class="skill-box">Data Cleaning & Feature Engineering</div>
 </div>
 </section>
 
-<section id="projects" class="fade-in">
+<section id="projects">
 <h2 class="section-title">Projects</h2>
 <div class="projects">
 
 <div class="project-card">
-<h3>Financial Fraud Detection Model</h3>
-<p>Built ML model to detect fraudulent transactions achieving high recall and anomaly identification accuracy.</p>
+<h3>Financial Fraud Detection</h3>
+<p>Developed ML model to identify fraudulent patterns with optimized recall performance.</p>
 </div>
 
 <div class="project-card">
-<h3>Government Budget Analytics Dashboard</h3>
-<p>Interactive Power BI dashboard analyzing sector-wise allocations and trend deviations.</p>
+<h3>Government Budget Dashboard</h3>
+<p>Analyzed sector allocations and built interactive monitoring dashboard using Power BI.</p>
 </div>
 
 <div class="project-card">
 <h3>Customer Churn Prediction</h3>
-<p>Predictive modeling to identify churn drivers and recommend retention strategies.</p>
+<p>Built classification model identifying churn drivers and recommending retention insights.</p>
 </div>
 
 </div>
 </section>
 
-<section id="contact" class="fade-in contact">
+<section id="contact" class="contact">
 <h2 class="section-title">Contact</h2>
 <p>Email: muthamilharasigr@gmail.com</p>
 <p>LinkedIn: linkedin.com/in/muthamilharasigr</p>
-<p>GitHub: github.com/yourusername</p>
+<p>GitHub: github.com/Muthamilharasi</p>
 </section>
 
 <div class="footer">
-© 2026 G R Muthamilharasi | Data Portfolio
+© 2026 G R Muthamilharasi | AI & Data Portfolio
 </div>
 
 <script>
-const faders = document.querySelectorAll('.fade-in');
 
-const appearOptions = {
-threshold: 0.3
-};
+/* Typing Animation */
+const textArray=[
+"Data Analyst",
+"AI & Machine Learning Enthusiast",
+"SQL | Python | Power BI"
+];
 
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
-entries.forEach(entry=>{
-if(!entry.isIntersecting){
+let index=0;
+let charIndex=0;
+let currentText="";
+let isDeleting=false;
+const speed=100;
+
+function type(){
+currentText=textArray[index];
+
+if(!isDeleting){
+document.getElementById("typed-text").textContent=currentText.substring(0,charIndex++);
+if(charIndex>currentText.length){
+isDeleting=true;
+setTimeout(type,1000);
 return;
+}
 }else{
-entry.target.classList.add('active');
-appearOnScroll.unobserve(entry.target);
+document.getElementById("typed-text").textContent=currentText.substring(0,charIndex--);
+if(charIndex===0){
+isDeleting=false;
+index=(index+1)%textArray.length;
+}
+}
+setTimeout(type,speed);
+}
+type();
+
+/* Scroll Reveal */
+const sections=document.querySelectorAll("section");
+
+window.addEventListener("scroll",()=>{
+sections.forEach(section=>{
+const sectionTop=section.getBoundingClientRect().top;
+if(sectionTop<window.innerHeight/1.3){
+section.classList.add("show");
 }
 });
-}, appearOptions);
-
-faders.forEach(fader=>{
-appearOnScroll.observe(fader);
 });
+
 </script>
 
 </body>
