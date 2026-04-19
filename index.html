@@ -3,88 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muthamilharasi | Data Analyst</title>
+<title>Muthamilharasi | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-body{background:#0b1220;color:#e2e8f0;line-height:1.6;}
-a{text-decoration:none;color:inherit}
+body{background:#0b1220;color:#e2e8f0;}
 
-/* NAV */
 nav{
 display:flex;justify-content:space-between;align-items:center;
 padding:20px 8%;position:fixed;width:100%;
-background:rgba(2,6,23,0.8);backdrop-filter:blur(10px);z-index:1000;
+background:rgba(2,6,23,0.9);z-index:1000;
 }
-nav h2{color:#38bdf8;font-weight:600;}
-nav ul{display:flex;gap:25px;list-style:none;}
+nav h2{color:#38bdf8;}
+nav ul{display:flex;gap:20px;list-style:none;}
+nav a{color:white;text-decoration:none;}
 nav a:hover{color:#38bdf8;}
 
-/* HERO */
 .hero{
 height:100vh;display:flex;flex-direction:column;
-justify-content:center;align-items:center;text-align:center;padding:20px;
+justify-content:center;align-items:center;text-align:center;
+padding:20px;
 }
 .hero h1{font-size:52px;color:#38bdf8;}
 .hero p{max-width:700px;margin-top:15px;color:#94a3b8;}
+
 .btn{
-margin-top:25px;padding:12px 28px;border-radius:30px;
-background:#38bdf8;color:#020617;font-weight:600;border:none;
-cursor:pointer;transition:0.3s;
+margin-top:15px;padding:10px 22px;
+background:#38bdf8;border:none;border-radius:25px;
+cursor:pointer;font-weight:600;
 }
-.btn:hover{transform:scale(1.05);}
 
-/* SECTIONS */
 section{padding:90px 8%;}
-.title{text-align:center;margin-bottom:50px;color:#38bdf8;font-size:28px;}
+.title{text-align:center;margin-bottom:50px;color:#38bdf8;}
 
-/* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
 }
 
-/* CARD */
 .card{
-background:#020617;border-radius:14px;padding:25px;
+background:#020617;padding:20px;border-radius:12px;
 transition:0.4s;
-}
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 40px rgba(56,189,248,0.2);
+opacity:0;
+transform:translateY(20px);
 }
 
-/* PROJECT IMAGE */
-.card img{
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 30px rgba(56,189,248,0.2);
+}
+
+.case{
+background:#020617;padding:25px;border-radius:12px;
+margin-bottom:25px;
+opacity:0;
+transform:translateY(20px);
+transition:0.6s;
+}
+
+.case img{
 width:100%;
 border-radius:10px;
 margin-bottom:15px;
 }
 
-/* CASE STUDY STYLE */
-.case{
-background:#020617;
-padding:30px;
-border-radius:14px;
-margin-bottom:30px;
-}
 .case h3{color:#38bdf8;margin-bottom:10px;}
-.case p{color:#94a3b8;margin-bottom:10px;}
+.case p{color:#94a3b8;margin-bottom:8px;}
 
-/* TIMELINE */
-.timeline{
-border-left:2px solid #38bdf8;
-padding-left:20px;
-}
-.timeline-item{
-margin-bottom:20px;
+iframe{
+margin-top:10px;
+border-radius:10px;
 }
 
-/* FOOTER */
-footer{text-align:center;padding:20px;color:#94a3b8;}
+footer{
+text-align:center;
+padding:20px;
+color:#94a3b8;
+}
 </style>
 </head>
 
@@ -94,8 +92,10 @@ footer{text-align:center;padding:20px;color:#94a3b8;}
 <h2>GRM</h2>
 <ul>
 <li><a href="#about">About</a></li>
-<li><a href="#projects">Projects</a></li>
+<li><a href="#skills">Capabilities</a></li>
+<li><a href="#projects">Work</a></li>
 <li><a href="#experience">Experience</a></li>
+<li><a href="#ai">AI Demo</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -103,47 +103,78 @@ footer{text-align:center;padding:20px;color:#94a3b8;}
 <!-- HERO -->
 <div class="hero">
 <h1>G R Muthamilharasi</h1>
-<p>Data Analyst focused on transforming raw data into actionable insights using SQL, Python, and Power BI.</p>
+<p>AI & Data Science Graduate | Problem Solver | Turning Data into Real-World Impact</p>
 <a href="#projects"><button class="btn">View My Work</button></a>
 </div>
 
 <!-- ABOUT -->
 <section id="about">
-<h2 class="title">About</h2>
+<h2 class="title">About Me</h2>
 <p style="text-align:center;max-width:800px;margin:auto;color:#94a3b8;">
-Final-year AI & Data Science student with experience analyzing large datasets, building dashboards, and delivering insights. Strong in data cleaning, EDA, KPI analysis, and business-focused problem solving.
+Final-year AI & Data Science student with experience in data analysis, dashboarding, and machine learning. Skilled in transforming raw data into actionable insights and solving real-world problems.
 </p>
 </section>
 
-<!-- PROJECTS (CASE STUDY STYLE) -->
+<!-- WHY ME -->
+<section>
+<h2 class="title">Why Me?</h2>
+<div class="grid">
+
+<div class="card"><h3>Real Data Experience</h3><p>Worked with 20,000+ records and large datasets.</p></div>
+<div class="card"><h3>End-to-End Projects</h3><p>From cleaning → analysis → dashboard → insights.</p></div>
+<div class="card"><h3>Business Thinking</h3><p>Focus on decisions, not just models.</p></div>
+<div class="card"><h3>Fast Learner</h3><p>Quickly adapt to new tools and domains.</p></div>
+
+</div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="skills">
+<h2 class="title">Capabilities</h2>
+<div class="grid">
+<div class="card">Data Analysis & EDA</div>
+<div class="card">Machine Learning</div>
+<div class="card">Dashboard Development</div>
+<div class="card">Problem Solving</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
 <section id="projects">
-<h2 class="title">Featured Projects</h2>
+<h2 class="title">Selected Work</h2>
 
 <div class="case">
 <img src="images/auto-dashboard.png">
 <h3>Automobile Sales Dashboard</h3>
-<p><b>Problem:</b> Understand revenue performance across products and regions.</p>
-<p><b>Approach:</b> Cleaned dataset (missing values, duplicates), built KPIs using DAX, created interactive dashboard.</p>
-<p><b>Impact:</b> Identified top product (Classic Cars – 39%) and top country (USA – $3.36M).</p>
-<a href="https://github.com/YOUR_USERNAME/auto-sales-dashboard"><button class="btn">View Project</button></a>
+<p><b>Problem:</b> Analyze revenue trends.</p>
+<p><b>Approach:</b> Data cleaning + Power BI + DAX KPIs.</p>
+<p><b>Impact:</b> Identified top products & regions.</p>
+
+<iframe src="YOUR_POWERBI_LINK" width="100%" height="350"></iframe>
+
+<a href="https://github.com/YOUR_USERNAME/auto-sales-dashboard" target="_blank">
+<button class="btn">View Code</button>
+</a>
 </div>
 
 <div class="case">
 <img src="images/sales-analysis.png">
 <h3>Sales Performance Analysis</h3>
-<p><b>Problem:</b> Identify trends and revenue opportunities.</p>
-<p><b>Approach:</b> Used SQL for querying and Python for analysis on 50,000+ transactions.</p>
-<p><b>Impact:</b> Discovered performance gaps and growth opportunities.</p>
-<a href="https://github.com/YOUR_USERNAME/sales-analysis"><button class="btn">View Project</button></a>
+<p><b>Problem:</b> Identify revenue gaps.</p>
+<p><b>Approach:</b> SQL + Python analysis.</p>
+<p><b>Impact:</b> Found growth opportunities.</p>
+
+<a href="https://github.com/YOUR_USERNAME/sales-analysis" target="_blank">
+<button class="btn">View Code</button>
+</a>
 </div>
 
 <div class="case">
 <img src="images/cooling-project.png">
 <h3>Space-Based Cooling Analysis</h3>
-<p><b>Problem:</b> Improve data center cooling efficiency.</p>
-<p><b>Approach:</b> Analyzed thermal simulation data and evaluated heat dissipation.</p>
-<p><b>Impact:</b> Suggested optimization strategies for improved cooling performance.</p>
-<a href="#"><button class="btn">View Details</button></a>
+<p><b>Problem:</b> Improve cooling efficiency.</p>
+<p><b>Approach:</b> Thermal simulation.</p>
+<p><b>Impact:</b> Optimization insights.</p>
 </div>
 
 </section>
@@ -151,14 +182,23 @@ Final-year AI & Data Science student with experience analyzing large datasets, b
 <!-- EXPERIENCE -->
 <section id="experience">
 <h2 class="title">Experience</h2>
-
-<div class="timeline">
-<div class="timeline-item">
+<div class="card">
 <h3>Data Science Intern – TechCiti</h3>
-<p>Processed 20,000+ healthcare records, performed EDA, and delivered insights for decision-making.</p>
+<p>Processed 20,000+ records, performed EDA, and delivered insights.</p>
 </div>
-</div>
+</section>
 
+<!-- AI DEMO -->
+<section id="ai">
+<h2 class="title">AI Project Demo</h2>
+
+<div class="case">
+<h3>Mental Health Chatbot</h3>
+<p>Built using Amazon PartyRock for conversational support.</p>
+
+<iframe src="https://partyrock.aws/u/Muthamilharasi/BEtrdO65p/UAlive" width="100%" height="400"></iframe>
+
+</div>
 </section>
 
 <!-- CONTACT -->
@@ -170,8 +210,23 @@ Final-year AI & Data Science student with experience analyzing large datasets, b
 </section>
 
 <footer>
-© 2026 Muthamilharasi | Data Analyst Portfolio
+© 2026 Muthamilharasi Portfolio
 </footer>
+
+<!-- ANIMATION SCRIPT -->
+<script>
+const items = document.querySelectorAll('.card, .case');
+
+window.addEventListener('scroll', () => {
+items.forEach(el => {
+const pos = el.getBoundingClientRect().top;
+if(pos < window.innerHeight - 100){
+el.style.opacity = "1";
+el.style.transform = "translateY(0)";
+}
+});
+});
+</script>
 
 </body>
 </html>
