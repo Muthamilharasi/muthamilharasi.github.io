@@ -3,336 +3,175 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>G R Muthamilharasi | AI & Data Portfolio</title>
+<title>Muthamilharasi | Data Analyst</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
-
-body{
-background: linear-gradient(-45deg, #0f0f14, #161622, #0d1a26, #111827);
-background-size: 400% 400%;
-animation: gradientBG 10s ease infinite;
-color:#f5f5f5;
-overflow-x:hidden;
-}
-
-/* Animated Background */
-@keyframes gradientBG {
-0% {background-position:0% 50%;}
-50% {background-position:100% 50%;}
-100% {background-position:0% 50%;}
-}
-
-/* INTRO */
-#intro{
-position:fixed;
-width:100%;
-height:100vh;
-background:#0f0f14;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:9999;
-animation:introFade 3s forwards;
-}
-
-.intro-text{
-text-align:center;
-animation:zoomText 2s ease;
-}
-
-#intro h1{
-font-size:60px;
-color:#00c6ff;
-}
-
-#intro p{
-margin-top:10px;
-font-size:20px;
-}
-
-@keyframes zoomText{
-from{transform:scale(0.5);opacity:0;}
-to{transform:scale(1);opacity:1;}
-}
-
-@keyframes introFade{
-0%{opacity:1;}
-85%{opacity:1;}
-100%{opacity:0;visibility:hidden;}
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:#0b1220;color:#e2e8f0;line-height:1.6;}
+a{text-decoration:none;color:inherit}
 
 /* NAV */
 nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 10%;
-position:fixed;
-width:100%;
-background:rgba(15,15,20,0.8);
-backdrop-filter:blur(10px);
-z-index:1000;
+display:flex;justify-content:space-between;align-items:center;
+padding:20px 8%;position:fixed;width:100%;
+background:rgba(2,6,23,0.8);backdrop-filter:blur(10px);z-index:1000;
 }
-
-nav h2{color:#00c6ff;}
-
-nav ul{
-display:flex;
-list-style:none;
-gap:30px;
-}
-
-nav ul li a{
-color:white;
-text-decoration:none;
-transition:0.3s;
-}
-
-nav ul li a:hover{
-color:#00c6ff;
-}
+nav h2{color:#38bdf8;font-weight:600;}
+nav ul{display:flex;gap:25px;list-style:none;}
+nav a:hover{color:#38bdf8;}
 
 /* HERO */
 .hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
+height:100vh;display:flex;flex-direction:column;
+justify-content:center;align-items:center;text-align:center;padding:20px;
 }
-
-.hero h1{
-font-size:48px;
-}
-
-.typing{
-color:#00c6ff;
-margin-top:15px;
-font-size:22px;
-height:30px;
-}
-
+.hero h1{font-size:52px;color:#38bdf8;}
+.hero p{max-width:700px;margin-top:15px;color:#94a3b8;}
 .btn{
-margin-top:25px;
-padding:10px 25px;
-border:none;
-background:#00c6ff;
-color:black;
-border-radius:25px;
-font-weight:600;
-cursor:pointer;
-transition:0.3s;
+margin-top:25px;padding:12px 28px;border-radius:30px;
+background:#38bdf8;color:#020617;font-weight:600;border:none;
+cursor:pointer;transition:0.3s;
 }
-
-.btn:hover{
-background:white;
-}
+.btn:hover{transform:scale(1.05);}
 
 /* SECTIONS */
-section{
-padding:100px 10%;
-opacity:0;
-transform:rotateX(20deg) scale(0.95);
-transition:all 1s ease;
-}
+section{padding:90px 8%;}
+.title{text-align:center;margin-bottom:50px;color:#38bdf8;font-size:28px;}
 
-section.show{
-opacity:1;
-transform:rotateX(0deg) scale(1);
-}
-
-.section-title{
-text-align:center;
-margin-bottom:50px;
-color:#00c6ff;
-}
-
-/* SKILLS */
-.skills{
+/* GRID */
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:25px;
 }
 
-.skill-box{
-background:#1a1a24;
-padding:20px;
-border-radius:12px;
+/* CARD */
+.card{
+background:#020617;border-radius:14px;padding:25px;
 transition:0.4s;
 }
-
-.skill-box:hover{
+.card:hover{
 transform:translateY(-10px);
-box-shadow:0 10px 30px rgba(0,198,255,0.3);
+box-shadow:0 20px 40px rgba(56,189,248,0.2);
 }
 
-/* PROJECTS */
-.projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
+/* PROJECT IMAGE */
+.card img{
+width:100%;
+border-radius:10px;
+margin-bottom:15px;
 }
 
-.project-card{
-background:#1a1a24;
-padding:25px;
-border-radius:12px;
-transition:0.5s;
-cursor:pointer;
-transform-style:preserve-3d;
+/* CASE STUDY STYLE */
+.case{
+background:#020617;
+padding:30px;
+border-radius:14px;
+margin-bottom:30px;
+}
+.case h3{color:#38bdf8;margin-bottom:10px;}
+.case p{color:#94a3b8;margin-bottom:10px;}
+
+/* TIMELINE */
+.timeline{
+border-left:2px solid #38bdf8;
+padding-left:20px;
+}
+.timeline-item{
+margin-bottom:20px;
 }
 
-.project-card:hover{
-transform:rotateY(8deg) rotateX(8deg) scale(1.05);
-box-shadow:0 20px 40px rgba(0,198,255,0.3);
-}
-
-/* CONTACT */
-.contact{text-align:center;}
-
-.footer{
-text-align:center;
-padding:20px;
-background:#1a1a24;
-}
+/* FOOTER */
+footer{text-align:center;padding:20px;color:#94a3b8;}
 </style>
 </head>
-<body>
 
-<div id="intro">
-<div class="intro-text">
-<h1>Welcome</h1>
-<p>Intelligence Through Data</p>
-</div>
-</div>
+<body>
 
 <nav>
 <h2>GRM</h2>
 <ul>
 <li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
 <li><a href="#projects">Projects</a></li>
+<li><a href="#experience">Experience</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
 <h1>G R Muthamilharasi</h1>
-<div class="typing"><span id="typed-text"></span></div>
-<a href="#projects"><button class="btn">Explore My Work</button></a>
+<p>Data Analyst focused on transforming raw data into actionable insights using SQL, Python, and Power BI.</p>
+<a href="#projects"><button class="btn">View My Work</button></a>
 </div>
 
+<!-- ABOUT -->
 <section id="about">
-<h2 class="section-title">About Me</h2>
-<p>
-AI & Data Science graduate passionate about transforming raw data into actionable intelligence using SQL, Python, Machine Learning and Data Visualization.
+<h2 class="title">About</h2>
+<p style="text-align:center;max-width:800px;margin:auto;color:#94a3b8;">
+Final-year AI & Data Science student with experience analyzing large datasets, building dashboards, and delivering insights. Strong in data cleaning, EDA, KPI analysis, and business-focused problem solving.
 </p>
 </section>
 
-<section id="skills">
-<h2 class="section-title">Technical Skills</h2>
-<div class="skills">
-<div class="skill-box">SQL – Advanced Joins, Aggregations, Query Optimization</div>
-<div class="skill-box">Python – Pandas, NumPy, Scikit-learn</div>
-<div class="skill-box">Machine Learning – Classification & Anomaly Detection</div>
-<div class="skill-box">Power BI – Interactive Dashboard Design</div>
-<div class="skill-box">Advanced Excel & Data Validation</div>
-<div class="skill-box">Data Cleaning & Feature Engineering</div>
-</div>
-</section>
-
+<!-- PROJECTS (CASE STUDY STYLE) -->
 <section id="projects">
-<h2 class="section-title">Projects</h2>
-<div class="projects">
+<h2 class="title">Featured Projects</h2>
 
-<div class="project-card">
-<h3>Financial Fraud Detection</h3>
-<p>Developed ML model to identify fraudulent patterns with optimized recall performance.</p>
+<div class="case">
+<img src="images/auto-dashboard.png">
+<h3>Automobile Sales Dashboard</h3>
+<p><b>Problem:</b> Understand revenue performance across products and regions.</p>
+<p><b>Approach:</b> Cleaned dataset (missing values, duplicates), built KPIs using DAX, created interactive dashboard.</p>
+<p><b>Impact:</b> Identified top product (Classic Cars – 39%) and top country (USA – $3.36M).</p>
+<a href="https://github.com/YOUR_USERNAME/auto-sales-dashboard"><button class="btn">View Project</button></a>
 </div>
 
-<div class="project-card">
-<h3>Government Budget Dashboard</h3>
-<p>Analyzed sector allocations and built interactive monitoring dashboard using Power BI.</p>
+<div class="case">
+<img src="images/sales-analysis.png">
+<h3>Sales Performance Analysis</h3>
+<p><b>Problem:</b> Identify trends and revenue opportunities.</p>
+<p><b>Approach:</b> Used SQL for querying and Python for analysis on 50,000+ transactions.</p>
+<p><b>Impact:</b> Discovered performance gaps and growth opportunities.</p>
+<a href="https://github.com/YOUR_USERNAME/sales-analysis"><button class="btn">View Project</button></a>
 </div>
 
-<div class="project-card">
-<h3>Customer Churn Prediction</h3>
-<p>Built classification model identifying churn drivers and recommending retention insights.</p>
+<div class="case">
+<img src="images/cooling-project.png">
+<h3>Space-Based Cooling Analysis</h3>
+<p><b>Problem:</b> Improve data center cooling efficiency.</p>
+<p><b>Approach:</b> Analyzed thermal simulation data and evaluated heat dissipation.</p>
+<p><b>Impact:</b> Suggested optimization strategies for improved cooling performance.</p>
+<a href="#"><button class="btn">View Details</button></a>
 </div>
 
-</div>
 </section>
 
-<section id="contact" class="contact">
-<h2 class="section-title">Contact</h2>
-<p>Email: muthamilharasigr@gmail.com</p>
-<p>LinkedIn: linkedin.com/in/muthamilharasigr</p>
-<p>GitHub: github.com/Muthamilharasi</p>
-</section>
+<!-- EXPERIENCE -->
+<section id="experience">
+<h2 class="title">Experience</h2>
 
-<div class="footer">
-© 2026 G R Muthamilharasi | AI & Data Portfolio
+<div class="timeline">
+<div class="timeline-item">
+<h3>Data Science Intern – TechCiti</h3>
+<p>Processed 20,000+ healthcare records, performed EDA, and delivered insights for decision-making.</p>
+</div>
 </div>
 
-<script>
+</section>
 
-/* Typing Animation */
-const textArray=[
-"Data Analyst",
-"AI & Machine Learning Enthusiast",
-"SQL | Python | Power BI"
-];
+<!-- CONTACT -->
+<section id="contact">
+<h2 class="title">Contact</h2>
+<p style="text-align:center;">muthamilharasigr@gmail.com</p>
+<p style="text-align:center;">linkedin.com/in/muthamilharasigr</p>
+<p style="text-align:center;">github.com/Muthamilharasi</p>
+</section>
 
-let index=0;
-let charIndex=0;
-let currentText="";
-let isDeleting=false;
-const speed=100;
-
-function type(){
-currentText=textArray[index];
-
-if(!isDeleting){
-document.getElementById("typed-text").textContent=currentText.substring(0,charIndex++);
-if(charIndex>currentText.length){
-isDeleting=true;
-setTimeout(type,1000);
-return;
-}
-}else{
-document.getElementById("typed-text").textContent=currentText.substring(0,charIndex--);
-if(charIndex===0){
-isDeleting=false;
-index=(index+1)%textArray.length;
-}
-}
-setTimeout(type,speed);
-}
-type();
-
-/* Scroll Reveal */
-const sections=document.querySelectorAll("section");
-
-window.addEventListener("scroll",()=>{
-sections.forEach(section=>{
-const sectionTop=section.getBoundingClientRect().top;
-if(sectionTop<window.innerHeight/1.3){
-section.classList.add("show");
-}
-});
-});
-
-</script>
+<footer>
+© 2026 Muthamilharasi | Data Analyst Portfolio
+</footer>
 
 </body>
 </html>
